@@ -9,11 +9,17 @@ const addChannelNpm = require('./lib/add-channel');
 const prepareNpm = require('./lib/prepare');
 const publishNpm = require('./lib/publish');
 
+// https://github.com/semrel-extra/npm/blob/master/src/main/js/index.js
+let memo
 let verified;
 let prepared;
 const npmrc = tempy.file({name: '.npmrc'});
 
 async function verifyConditions(pluginConfig, context) {
+  if (memo) {
+    return memo;
+  }
+
   // If the npm publish plugin is used and has `npmPublish`, `tarballDir` or `pkgRoot` configured, validate them now in order to prevent any release if the configuration is wrong
   if (context.options.publish) {
     const publishPlugin =
@@ -44,6 +50,10 @@ async function verifyConditions(pluginConfig, context) {
   }
 
   verified = true;
+
+  if (pluginConfig.npmPublish !== false && pkg.private !== true) {
+    memo = verified
+  }
 }
 
 async function prepare(pluginConfig, context) {
