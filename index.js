@@ -34,8 +34,10 @@ async function verifyConditions(pluginConfig, context) {
 
   setLegacyToken(context);
 
+  let pkg;
+
   try {
-    const pkg = await getPkg(pluginConfig, context);
+    pkg = await getPkg(pluginConfig, context);
 
     // Verify the npm authentication only if `npmPublish` is not false and `pkg.private` is not `true`
     if (pluginConfig.npmPublish !== false && pkg.private !== true) {
