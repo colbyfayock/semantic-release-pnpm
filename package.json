@@ -1,6 +1,6 @@
 {
-  "name": "semantic-release-pnpm",
-  "homepage": "https://github.com/autoclouddev/semantic-release-pnpm",
+  "name": "@colbyfayock/semantic-release-pnpm",
+  "homepage": "https://github.com/colbyfayock/semantic-release-pnpm",
   "description": "pnpm semantic-release plugin to publish a npm package",
   "version": "1.0.2",
   "ava": {
@@ -86,7 +86,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/autoclouddev/semantic-release-pnpm"
+    "url": "https://github.com/colbyfayock/semantic-release-pnpm"
   },
   "scripts": {
     "codecov": "codecov -f coverage/coverage-final.json",
