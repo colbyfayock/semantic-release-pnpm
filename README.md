@@ -13,7 +13,7 @@
 ## Install
 
 ```bash
-$ npm install semantic-release-pnpm -D
+$ npm install @colbyfayock/semantic-release-pnpm -D
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ The plugin can be configured in the [**semantic-release** configuration file](ht
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "semantic-release-pnpm",
+    "@colbyfayock/semantic-release-pnpm",
   ]
 }
 ```
@@ -91,7 +91,7 @@ The `npmPublish` and `tarballDir` option can be used to skip the publishing to t
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    ["semantic-release-pnpm", {
+    ["@colbyfayock/semantic-release-pnpm", {
       "npmPublish": false,
       "tarballDir": "dist",
     }],
@@ -109,7 +109,7 @@ When publishing from a sub-directory with the `pkgRoot` option, the `package.jso
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    ["semantic-release-pnpm", {
+    ["@colbyfayock/semantic-release-pnpm", {
       "pkgRoot": "dist",
     }],
     ["@semantic-release/git", {
