@@ -91,6 +91,7 @@
   "scripts": {
     "codecov": "codecov -f coverage/coverage-final.json",
     "lint": "xo",
+    "fix": "xo --fix",
     "pretest": "npm run lint",
     "semantic-release": "semantic-release",
     "test": "nyc ava -v",

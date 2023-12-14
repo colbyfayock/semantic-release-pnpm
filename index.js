@@ -10,7 +10,7 @@ const prepareNpm = require('./lib/prepare');
 const publishNpm = require('./lib/publish');
 
 // https://github.com/semrel-extra/npm/blob/master/src/main/js/index.js
-let memo
+let memo;
 let verified;
 let prepared;
 const npmrc = tempy.file({name: '.npmrc'});
@@ -54,7 +54,7 @@ async function verifyConditions(pluginConfig, context) {
   verified = true;
 
   if (pluginConfig.npmPublish !== false && pkg.private !== true) {
-    memo = verified
+    memo = verified;
   }
 }
 
